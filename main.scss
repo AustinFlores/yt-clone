@@ -1,0 +1,194 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Roboto, Arial, Arial, Helvetica, sans-serif;
+}
+
+.top-and-sidebar {
+  .topbar {
+    position: fixed;
+    right: 0;
+    background: #212121;
+    height: 4rem;
+    width: 94vw;
+    .container {
+      height: 96%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6rem;
+      .logo {
+        height: 4.5rem;
+        flex-grow: 0;
+      }
+      .search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        .search-bar {
+          width: 100%;
+          padding-block: 0.5rem;
+          font-size: 1em;
+          padding-left: 0.3rem;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: #121212;
+          border-right: none;
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
+          color: white;
+        }
+        .search-btn {
+          background: rgba(255, 255, 255, 0.1);
+          padding: 7px 1rem 5.8px;
+          border-top-right-radius: 3px;
+          border-bottom-right-radius: 3px;
+          margin-right: 1rem;
+          position: relative;
+
+          &:hover img {
+            opacity: 1;
+          }
+          img {
+            display: flex;
+            opacity: 0.5;
+          }
+        }
+      }
+      .right-col {
+        flex-grow: 0;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-right: 2rem;
+        .channel-logo {
+          border-radius: 50%;
+        }
+      }
+    }
+    .recommendations {
+      background: #212121;
+      position: fixed;
+      top: 4rem;
+      right: 0;
+      width: 94vw;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0 1rem;
+        margin-block: 1rem;
+        a:not(.active) {
+          background: rgba(255, 255, 255, 0.1);
+          padding: 0.5rem 0.8rem;
+          font-size: 0.9rem;
+          color: white;
+          text-decoration: none;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 50q;
+          transition: background 0.5s;
+          &:hover {
+            background: rgba(255, 255, 255, 0.2);
+          }
+        }
+        .active {
+          background: white;
+          padding: 0.5rem 0.8rem;
+          font-size: 0.9rem;
+          color: black;
+          text-decoration: none;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 50q;
+        }
+      }
+    }
+  }
+  .sidebar {
+    position: fixed;
+    background: #212121;
+    z-index: 1;
+    height: 100vh;
+    width: 6vw;
+    .container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 1rem;
+      gap: 2.2rem 0;
+      a {
+        font-size: 0.6rem;
+        color: white;
+        text-decoration: none;
+        img {
+          display: block;
+          margin: 0 auto;
+          margin-bottom: 0.4rem;
+        }
+      }
+    }
+  }
+}
+
+.video-grid {
+  position: absolute;
+  background: #181818;
+  width: 94vw;
+  right: 0;
+  top: 8.35rem;
+  z-index: -1;
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    margin: 1.3rem;
+    .video-container {
+      a {
+        text-decoration: none;
+      }
+      .thumbnail {
+        position: relative;
+        &::after {
+          content: "12:43";
+          position: absolute;
+          background: rgba(0, 0, 0, 0.8);
+          bottom: 0.5rem;
+          right: 0.2rem;
+          padding: 0.2rem 0.4rem;
+          font-size: 0.8em;
+          color: white;
+          border-radius: 3px;
+        }
+      }
+      .video-bottom {
+        padding-block: 1rem 3rem;
+        cursor: pointer;
+        width: 100%;
+        .video-profile {
+          display: flex;
+          gap: 0 0.8rem;
+          p {
+            font-size: 0.95rem;
+          }
+          .title {
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+          }
+          .channel-name,
+          .other {
+            color: #aaaaaa;
+            line-height: 1.5;
+          }
+          .channel-logo {
+            align-self: flex-start;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
